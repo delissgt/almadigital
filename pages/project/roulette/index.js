@@ -1,7 +1,5 @@
 "use client";
 import React, {useState, useEffect} from 'react';
-import WheelComponent from "react-wheel-of-prizes";
-import 'react-wheel-of-prizes/dist/index';
 
 
 const data = [
@@ -71,24 +69,6 @@ export default function  Roulette() {
         <h1>roulette</h1>
         <textarea title={'insert all elements'} id={"elements"}/>
         <button onClick={saveData}>Guardar datos</button>
-
-        {startRoulette && (
-            <WheelComponent
-                segments={segments}
-                segColors={segColors}
-                winningSegment='won 10'
-                onFinished={(winner) => onFinished(winner)}
-                primaryColor='black'
-                contrastColor='white'
-                buttonText='Spin'
-                isOnlyOnce={false}
-                size={290}
-                upDuration={100}
-                downDuration={1000}
-                fontFamily='Arial'
-            />
-
-        )}
 
 
       </main>
