@@ -1,11 +1,15 @@
 
 import ClockComponent from "../../../src/components/Clock";
-
+import Gallery from "../../../src/components/Gallery";
 
 export default function FashionCat() {
 
   return (
-      <ClockComponent/>
+      <div>
+        <ClockComponent/>
+        <Gallery/>
+      </div>
+
   )
 
 }
