@@ -1,7 +1,37 @@
 // import Image from 'next/image'
 // import styles from './page.module.css'
 
+// import reactImg from '/public/react-core-concepts.png'
+import reactImg from '../assets/react-core-concepts.png'
+
 import {PROJECT} from "../library/helpers/Paths";
+
+
+
+const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
+
+
+
+function genRandomInt(max) {
+  return Math.floor(Math.random() * (max+1));
+}
+
+function Header() {
+  console.log('reactI', reactImg)
+
+  const description = reactDescriptions[genRandomInt(2)]
+
+  return (
+      <header>
+        <img src={reactImg.src} alt="Stylized atom" />
+        <h1>React Essentials</h1>
+        <p>
+          {description} React concepts you will need for almost any app you are
+          going to build!
+        </p>
+      </header>
+  )
+}
 
 export default function Home() {
   return (
@@ -10,6 +40,14 @@ export default function Home() {
           <a href={PROJECT}>
             Projects
           </a>
+        </div>
+
+        <div>
+          <Header />
+          <Header />
+          <main>
+            <h2>Time to get started!</h2>
+          </main>
         </div>
 
 
