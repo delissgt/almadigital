@@ -1,3 +1,4 @@
+'use client';
 // import Image from 'next/image'
 // import styles from './page.module.css'
 
@@ -8,9 +9,14 @@ import {CORE_CONCEPTS} from "../assets/data";
 
 import Header from "../components/Header/Header";
 import CoreConcepts from "../components/CoreConcept/CoreConcept";
-
+import TabButton from "../components/TabButton/TabButton";
 
 export default function Home() {
+
+  function handleSelect() {
+    console.log("Handle Select!");
+  }
+
   return (
       <div>
         <div>
@@ -37,6 +43,16 @@ export default function Home() {
                 <CoreConcepts {...CORE_CONCEPTS[2]} />
                 <CoreConcepts {...CORE_CONCEPTS[3]} />
               </ul>
+            </section>
+            <section id='examples'>
+              <h2>Examples</h2>
+              <menu>
+                <TabButton onSelect={handleSelect}>Components</TabButton>
+                <TabButton onSelect={handleSelect}>JSX</TabButton>
+                <TabButton onSelect={handleSelect}>Props</TabButton>
+                <TabButton onSelect={handleSelect}>State</TabButton>
+              </menu>
+              dinamic content
             </section>
 
           </main>
