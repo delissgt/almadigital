@@ -2,14 +2,13 @@
 // import styles from './page.module.css'
 
 // import reactImg from '/public/react-core-concepts.png'
-import reactImg from '../assets/react-core-concepts.png'
+import reactImg from '../assets/react-core-concepts.png';
+import {CORE_CONCEPTS} from "../assets/data";
 
 import {PROJECT} from "../library/helpers/Paths";
 
 
-
 const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
-
 
 
 function genRandomInt(max) {
@@ -17,8 +16,6 @@ function genRandomInt(max) {
 }
 
 function Header() {
-  console.log('reactI', reactImg)
-
   const description = reactDescriptions[genRandomInt(2)]
 
   return (
@@ -33,6 +30,17 @@ function Header() {
   )
 }
 
+function CoreConcepts(props) {
+  console.log('propsss', props)
+  return (
+      <li>
+        <img src={props.image} alt={props.title}/>
+        <h3>{props.title}</h3>
+        <p>{props.description}</p>
+      </li>
+  )
+}
+
 export default function Home() {
   return (
       <div>
@@ -44,9 +52,21 @@ export default function Home() {
 
         <div>
           <Header />
-          <Header />
           <main>
-            <h2>Time to get started!</h2>
+            <section id="core-concepts">
+              <h2>Core Concepts!</h2>
+              <ul>
+                <CoreConcepts
+                    title={CORE_CONCEPTS[0].title}
+                    description={CORE_CONCEPTS[0].description}
+                    image={CORE_CONCEPTS[0].image}
+                />
+                <CoreConcepts {...CORE_CONCEPTS[1]} />
+                <CoreConcepts {...CORE_CONCEPTS[2]} />
+                <CoreConcepts {...CORE_CONCEPTS[3]} />
+              </ul>
+            </section>
+
           </main>
         </div>
 
