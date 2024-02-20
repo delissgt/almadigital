@@ -6,8 +6,8 @@ import {PROJECT} from "../library/helpers/Paths";
 
 import {CORE_CONCEPTS} from "../assets/data";
 
-import Header from "../components/Header";
-import CoreConcepts from "../components/CoreConcept";
+import Header from "../components/Header/Header";
+import CoreConcepts from "../components/CoreConcept/CoreConcept";
 
 
 export default function Home() {
@@ -20,6 +20,9 @@ export default function Home() {
         </div>
 
         <div>
+          <header>
+            <h1>Hello World!</h1>
+          </header>
           <Header />
           <main>
             <section id="core-concepts">
