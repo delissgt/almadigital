@@ -5,16 +5,22 @@
 // import reactImg from '/public/react-core-concepts.png'
 import {PROJECT} from "../library/helpers/Paths";
 
-import {CORE_CONCEPTS} from "../assets/data";
+import { useState } from 'react';
+import {CORE_CONCEPTS, EXAMPLES} from "../assets/data";
 
 import Header from "../components/Header/Header";
 import CoreConcepts from "../components/CoreConcept/CoreConcept";
 import TabButton from "../components/TabButton/TabButton";
 
 export default function Home() {
+  console.log("APP ")
+  const [selectedTopic, setSelectedTopic] = useState('components');
+
 
   function handleSelect(selectedButton) {
     console.log("Handle Select!", selectedButton);
+    setSelectedTopic(selectedButton)
+    console.log(selectedTopic);
   }
 
   return (
@@ -52,7 +58,13 @@ export default function Home() {
                 <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
                 <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
               </menu>
-              dinamic content
+              <div id="tab-content" >
+                <h3>{EXAMPLES[selectedTopic]['title']}</h3>
+                <p>{EXAMPLES[selectedTopic]['description']}</p>
+                <pre>
+                  <code>{EXAMPLES[selectedTopic]['code']}</code>
+                </pre>
+              </div>
             </section>
 
           </main>

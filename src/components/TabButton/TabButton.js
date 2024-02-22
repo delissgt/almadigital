@@ -2,6 +2,7 @@
 
 // TabButton(props)
 export default function TabButton({ children, onSelect }) {
+  console.log("TAB")
 
   return(
       <li>
