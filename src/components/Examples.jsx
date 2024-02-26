@@ -1,5 +1,6 @@
 'use client';
 import TabButton from "./TabButton/TabButton";
+import Section from "./Section";
 import {useState} from "react";
 import {EXAMPLES} from "../assets/data";
 
@@ -28,29 +29,29 @@ export default function Examples() {
   }
 
   return (
-      <section id='examples'>
-        <h2>Examples</h2>
+      <Section id='examples' title={"ExampleSs"}>
         <menu>
           <TabButton
-              onSelect={() => handleSelect('components')}
+              onClick={() => handleSelect('components')}
               isSelected={selectedTopic === 'components'}
           >
             Components
           </TabButton>
           <TabButton
-              onSelect={() => handleSelect('jsx')}
+              onClick={() => handleSelect('jsx')}
               isSelected={selectedTopic === 'jsx'}
           >
             JSX
           </TabButton>
           <TabButton
-              onSelect={() => handleSelect('props')}
+              onClick={() => handleSelect('props')}
               isSelected={selectedTopic === 'props'}
+              compome
           >
             Props
           </TabButton>
           <TabButton
-              onSelect={() => handleSelect('state')}
+              onClick={() => handleSelect('state')}
               isSelected={selectedTopic === 'state'}
           >
             State
@@ -59,7 +60,7 @@ export default function Examples() {
 
         {tabContent}
 
-      </section>
+      </Section>
 
   )
 }
