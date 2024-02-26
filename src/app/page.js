@@ -3,108 +3,28 @@
 // import styles from './page.module.css'
 
 // import reactImg from '/public/react-core-concepts.png'
+
 import {PROJECT} from "../library/helpers/Paths";
 
-import { useState } from 'react';
-import {CORE_CONCEPTS, EXAMPLES} from "../assets/data";
-
 import Header from "../components/Header/Header";
-import CoreConcepts from "../components/CoreConcept/CoreConcept";
-import TabButton from "../components/TabButton/TabButton";
+import CoreConcepts from "../components/CoreConcepts";
+import Examples from "../components/Examples";
 
 export default function Home() {
   console.log("APP ")
-  const [selectedTopic, setSelectedTopic] = useState();
-
-
-  function handleSelect(selectedButton) {
-    console.log("Handle Select!", selectedButton);
-    setSelectedTopic(selectedButton)
-    console.log(selectedTopic);
-  }
-
-  let tabContent = <p>Please Select a Topic.</p>
-
-  if(selectedTopic){
-    tabContent = (
-        <div id="tab-content" >
-          <h3>{EXAMPLES[selectedTopic]['title']}</h3>
-          <p>{EXAMPLES[selectedTopic]['description']}</p>
-          <pre>
-            <code>{EXAMPLES[selectedTopic]['code']}</code>
-          </pre>
-        </div>
-    )
-  }
 
   return (
       <>
-        <div>
-          <a href={PROJECT}>
-            Projects
-          </a>
-        </div>
+        <div><a href={PROJECT}>Projects</a></div>
 
         <div>
           <Header />
           <main>
-            <section id="core-concepts">
-              <h2>Core Concepts!</h2>
-              {/*{['hello', 'world', '!']}*/}
-              {/*{[<p>HELLO</p>, <p>WORLD</p>]}*/}
-              <ul>
-                {/*<CoreConcepts*/}
-                {/*    title={CORE_CONCEPTS[0].title}*/}
-                {/*    description={CORE_CONCEPTS[0].description}*/}
-                {/*    image={CORE_CONCEPTS[0].image}*/}
-                {/*/>*/}
-                {/*<CoreConcepts {...CORE_CONCEPTS[3]} />*/}
-
-                {
-                  CORE_CONCEPTS.map((conceptItem) => (
-                      <CoreConcepts
-                          key={conceptItem.title}
-                          {...conceptItem}
-                      />
-                  ))
-                }
-              </ul>
-            </section>
-            <section id='examples'>
-              <h2>Examples</h2>
-              <menu>
-                <TabButton
-                    onSelect={() => handleSelect('components')}
-                    isSelected={selectedTopic === 'components'}
-                >
-                  Components
-                </TabButton>
-                <TabButton
-                    onSelect={() => handleSelect('jsx')}
-                    isSelected={selectedTopic === 'jsx'}
-                >
-                  JSX
-                </TabButton>
-                <TabButton
-                    onSelect={() => handleSelect('props')}
-                    isSelected={selectedTopic === 'props'}
-                >
-                  Props
-                </TabButton>
-                <TabButton
-                    onSelect={() => handleSelect('state')}
-                    isSelected={selectedTopic === 'state'}
-                >
-                  State
-                </TabButton>
-              </menu>
-              {tabContent}
-            </section>
-
+            <CoreConcepts />
+            <Examples />
           </main>
         </div>
       </>
-
   )
 }
 
