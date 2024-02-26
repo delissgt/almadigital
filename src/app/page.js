@@ -38,7 +38,7 @@ export default function Home() {
   }
 
   return (
-      <div>
+      <>
         <div>
           <a href={PROJECT}>
             Projects
@@ -46,22 +46,28 @@ export default function Home() {
         </div>
 
         <div>
-          <header>
-            <h1>Hello World!</h1>
-          </header>
           <Header />
           <main>
             <section id="core-concepts">
               <h2>Core Concepts!</h2>
+              {/*{['hello', 'world', '!']}*/}
+              {/*{[<p>HELLO</p>, <p>WORLD</p>]}*/}
               <ul>
-                <CoreConcepts
-                    title={CORE_CONCEPTS[0].title}
-                    description={CORE_CONCEPTS[0].description}
-                    image={CORE_CONCEPTS[0].image}
-                />
-                <CoreConcepts {...CORE_CONCEPTS[1]} />
-                <CoreConcepts {...CORE_CONCEPTS[2]} />
-                <CoreConcepts {...CORE_CONCEPTS[3]} />
+                {/*<CoreConcepts*/}
+                {/*    title={CORE_CONCEPTS[0].title}*/}
+                {/*    description={CORE_CONCEPTS[0].description}*/}
+                {/*    image={CORE_CONCEPTS[0].image}*/}
+                {/*/>*/}
+                {/*<CoreConcepts {...CORE_CONCEPTS[3]} />*/}
+
+                {
+                  CORE_CONCEPTS.map((conceptItem) => (
+                      <CoreConcepts
+                          key={conceptItem.title}
+                          {...conceptItem}
+                      />
+                  ))
+                }
               </ul>
             </section>
             <section id='examples'>
@@ -97,9 +103,7 @@ export default function Home() {
 
           </main>
         </div>
-
-
-      </div>
+      </>
 
   )
 }
