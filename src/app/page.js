@@ -6,24 +6,12 @@
 
 import {PROJECT} from "../library/helpers/Paths";
 
-import Header from "../components/Header/Header";
-import CoreConcepts from "../components/CoreConcepts";
-import Examples from "../components/Examples";
-
 export default function Home() {
   console.log("APP ")
 
   return (
       <>
         <div><a href={PROJECT}>Projects</a></div>
-
-        <div>
-          <Header />
-          <main>
-            <CoreConcepts />
-            <Examples />
-          </main>
-        </div>
       </>
   )
 }
