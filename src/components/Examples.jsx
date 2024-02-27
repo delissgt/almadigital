@@ -32,6 +32,9 @@ export default function Examples() {
   return (
       <Section id='examples' title={"ExampleSs"}>
         <Tabs
+            // TODO ButtonsContainer={Section} if you wanna pass the identifier for a custom component as a prop value
+            // ButtonsContainer={Section}
+            // ButtonsContainer="menu"
             buttons={
               <>
                 <TabButton
