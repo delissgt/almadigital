@@ -6,18 +6,22 @@ export default function Player({name, symbol}) {
   // const [name, setName] = useState(name);
 
   function clickEditName(){
-    setIsEditing(true);
+    setIsEditing(!isEditing);
+  }
+
+  // VERSION 2
+  let playerName = <span className='player-name' >{name}</span>
+
+  if (isEditing) {
+    playerName = <input type="text" required value={name} />;
   }
 
 
   return (
       <li>
         <span className='player'>
-          {
-            isEditing
-                ? <input type='text' required  value={name}/>
-                : <span className='player-name' >{name}</span>
-          }
+
+          {playerName}
 
           <span className='player-symbol'>{symbol}</span>
         </span>
