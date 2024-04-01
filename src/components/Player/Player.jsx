@@ -6,7 +6,7 @@ export default function Player({name, symbol}) {
   // const [name, setName] = useState(name);
 
   function clickEditName(){
-    setIsEditing(!isEditing);
+    setIsEditing((editing) => !editing);
   }
 
   // VERSION 2
