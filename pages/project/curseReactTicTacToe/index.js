@@ -1,5 +1,6 @@
 import './index.css';
 import Player from "../../../src/components/Player/Player";
+import GameBoard from "../../../src/components/GameBoard";
 
 export default function CurseReactTicTacToe () {
   return (
@@ -15,9 +16,8 @@ export default function CurseReactTicTacToe () {
               <Player initialName='Player 1' symbol='X' />
               <Player initialName='Player 2' symbol='O' />
             </ol>
-            PLAYERS
 
-            GAME BOARD
+            <GameBoard />
           </div>
             LOG
         </main>
