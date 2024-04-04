@@ -5,18 +5,27 @@ import Player from "../../../src/components/Player/Player";
 import GameBoard from "../../../src/components/GameBoard";
 import Log from "../../../src/components/Log";
 
+
+function deriveActivePlayer(gameTurns) {
+  let currentPlayer = 'X';
+
+  if (gameTurns.length > 0 && gameTurns[0].player === 'X') {
+    currentPlayer = 'O';
+  }
+
+  return currentPlayer;
+}
+
 export default function CurseReactTicTacToe () {
-  const [activePlayer, setActivePlayer] = useState('X');
+  // const [activePlayer, setActivePlayer] = useState('X');
   const [gameTurns, setGameTurns] = useState([]);
 
-  function handleSelectSquare(rowIndex, colIndex) {
-    setActivePlayer((currentActivePlayer) => currentActivePlayer === 'X' ? 'O' : 'X');
-    setGameTurns(prevTurns => {
-      let currentPlayer = 'X';
+  const activePlayer = deriveActivePlayer(gameTurns);
 
-      if (prevTurns.length > 0 && prevTurns[0].player === 'X') {
-        currentPlayer = 'O';
-      }
+  function handleSelectSquare(rowIndex, colIndex) {
+    // setActivePlayer((currentActivePlayer) => currentActivePlayer === 'X' ? 'O' : 'X');
+    setGameTurns(prevTurns => {
+      const currentPlayer = deriveActivePlayer(prevTurns);
 
       const updatedTurns = [
         {
