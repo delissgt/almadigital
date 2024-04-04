@@ -4,6 +4,13 @@ import './index.css';
 import Player from "../../../src/components/Player/Player";
 import GameBoard from "../../../src/components/GameBoard";
 import Log from "../../../src/components/Log";
+import {WINNING_COMBINATIONS} from "../../../src/components/winning-combinations";
+
+const initialGameBoard = [
+  [null, null, null],
+  [null, null, null],
+  [null, null, null],
+];
 
 
 function deriveActivePlayer(gameTurns) {
@@ -19,8 +26,24 @@ function deriveActivePlayer(gameTurns) {
 export default function CurseReactTicTacToe () {
   // const [activePlayer, setActivePlayer] = useState('X');
   const [gameTurns, setGameTurns] = useState([]);
+  // const [hasWinner, setHasWinner] = useState(false);
 
   const activePlayer = deriveActivePlayer(gameTurns);
+
+  let gameBoard = initialGameBoard;
+  for (const turn of gameTurns) {
+    const { square, player } = turn;
+    const {row, col} = square;
+
+    gameBoard[row][col] = player;
+  }
+
+  for (const combination of WINNING_COMBINATIONS) {
+    // const firstSquareSymbol
+    // const secondSquareSymbol
+    // const thirdSquareSymbol
+  }
+
 
   function handleSelectSquare(rowIndex, colIndex) {
     // setActivePlayer((currentActivePlayer) => currentActivePlayer === 'X' ? 'O' : 'X');
@@ -55,7 +78,7 @@ export default function CurseReactTicTacToe () {
 
             <GameBoard
                 onSelectSquare={handleSelectSquare}
-                turns={gameTurns}
+                board={gameBoard}
             />
           </div>
             <Log turns={gameTurns}/>
