@@ -49,7 +49,7 @@ export default function CurseReactTicTacToe () {
                 turns={gameTurns}
             />
           </div>
-            <Log />
+            <Log turns={gameTurns}/>
         </main>
       </>
   )
