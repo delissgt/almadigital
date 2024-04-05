@@ -4,6 +4,7 @@ import './index.css';
 import Player from "../../../src/components/Player/Player";
 import GameBoard from "../../../src/components/GameBoard";
 import Log from "../../../src/components/Log";
+import GameOver from "../../../src/components/GameOver";
 import {WINNING_COMBINATIONS} from "../../../src/components/winning-combinations";
 
 const initialGameBoard = [
@@ -53,6 +54,8 @@ export default function CurseReactTicTacToe () {
     }
   }
 
+  const hasDraw = gameTurns.length === 9 && !winner;
+
 
   function handleSelectSquare(rowIndex, colIndex) {
     // setActivePlayer((currentActivePlayer) => currentActivePlayer === 'X' ? 'O' : 'X');
@@ -84,7 +87,7 @@ export default function CurseReactTicTacToe () {
               <Player initialName='Player 1' symbol='X' isActive={activePlayer === 'X'} />
               <Player initialName='Player 2' symbol='O' isActive={activePlayer === 'O'} />
             </ol>
-            {winner && <p>You won, {winner}!</p>}
+            {(winner || hasDraw ) && <GameOver winner={winner} />}
             <GameBoard
                 onSelectSquare={handleSelectSquare}
                 board={gameBoard}
