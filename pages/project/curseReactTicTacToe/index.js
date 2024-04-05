@@ -27,7 +27,10 @@ function deriveActivePlayer(gameTurns) {
 export default function CurseReactTicTacToe () {
   // const [activePlayer, setActivePlayer] = useState('X');
   const [gameTurns, setGameTurns] = useState([]);
-  // const [hasWinner, setHasWinner] = useState(false);
+  const [players, setPlayers] = useState({
+    'X': 'Player 1',
+    'O': 'Player 2',
+  });
 
   const activePlayer = deriveActivePlayer(gameTurns);
   // spread initialGameBoard array values
@@ -49,7 +52,8 @@ export default function CurseReactTicTacToe () {
         firstSquareSymbol === secondSquareSymbol &&
         firstSquareSymbol === thirdSquareSymbol
     ) {
-      winner = firstSquareSymbol;
+      // winner = firstSquareSymbol;
+      winner = players[firstSquareSymbol];
 
     }
   }
@@ -78,6 +82,15 @@ export default function CurseReactTicTacToe () {
     setGameTurns([]);
   }
 
+  function handlePlayerNameChange(symbol, newName) {
+    setPlayers((prevPlayers) => {
+      return {
+        ...prevPlayers,
+        [symbol]: newName
+      };
+    })
+  }
+
   return (
       <>
         <header>
@@ -88,8 +101,18 @@ export default function CurseReactTicTacToe () {
         <main>
           <div id="game-container">
             <ol id="players" className='highlight-player'>
-              <Player initialName='Player 1' symbol='X' isActive={activePlayer === 'X'} />
-              <Player initialName='Player 2' symbol='O' isActive={activePlayer === 'O'} />
+              <Player
+                  initialName='Player 1'
+                  symbol='X'
+                  isActive={activePlayer === 'X'}
+                  onChangeName={handlePlayerNameChange}
+              />
+              <Player
+                  initialName='Player 2'
+                  symbol='O'
+                  isActive={activePlayer === 'O'}
+                  onChangeName={handlePlayerNameChange}
+              />
             </ol>
             {(winner || hasDraw ) && <GameOver winner={winner} restart={handleRestart} />}
             <GameBoard
