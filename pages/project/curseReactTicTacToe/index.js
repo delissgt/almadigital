@@ -30,8 +30,8 @@ export default function CurseReactTicTacToe () {
   // const [hasWinner, setHasWinner] = useState(false);
 
   const activePlayer = deriveActivePlayer(gameTurns);
-
-  let gameBoard = initialGameBoard;
+  // spread initialGameBoard array values
+  let gameBoard = [...initialGameBoard.map(array => [...array])];
   for (const turn of gameTurns) {
     const { square, player } = turn;
     const {row, col} = square;
@@ -74,6 +74,10 @@ export default function CurseReactTicTacToe () {
     });
   }
 
+  function handleRestart() {
+    setGameTurns([]);
+  }
+
   return (
       <>
         <header>
@@ -87,7 +91,7 @@ export default function CurseReactTicTacToe () {
               <Player initialName='Player 1' symbol='X' isActive={activePlayer === 'X'} />
               <Player initialName='Player 2' symbol='O' isActive={activePlayer === 'O'} />
             </ol>
-            {(winner || hasDraw ) && <GameOver winner={winner} />}
+            {(winner || hasDraw ) && <GameOver winner={winner} restart={handleRestart} />}
             <GameBoard
                 onSelectSquare={handleSelectSquare}
                 board={gameBoard}

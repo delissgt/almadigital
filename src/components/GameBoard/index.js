@@ -11,6 +11,7 @@ export default function GameBoard({onSelectSquare, board}) {
   //
   // function handleSelectSquare(rowIndex, colIndex) {
   //   setGameBoard((prevGameBoard) => {
+  //  ---> ATTENTION SPREAD ARRAY INTO updatedBoard
   //     const updatedBoard = [...prevGameBoard.map((innerArray) => [...innerArray])];
   //     updatedBoard[rowIndex][colIndex] = activePlayerSymbol;
   //     return updatedBoard;
