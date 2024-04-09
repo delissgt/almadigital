@@ -23,11 +23,14 @@ export default function curseReactProjectInvestmentCalculator() {
     })
   }
 
+  const inputIsValid = userInput.duration >= 1;
+
   return (
       <>
         <HeaderCalculator title="React Investment Calculator"/>
         <UserInputCalculator userInput={userInput} onChange={handleChange}/>
-        <TableResultCalculator userInput={userInput} />
+        {!inputIsValid && (<p className='center'>Please enter a duration greater than zero.</p>)}
+        {inputIsValid && <TableResultCalculator userInput={userInput} />}
       </>
 
 
