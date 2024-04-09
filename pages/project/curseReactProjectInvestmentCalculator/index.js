@@ -5,7 +5,7 @@ import HeaderCalculator from "../../../src/components/HeaderCalculator";
 import UserInputCalculator from "../../../src/components/UserInputCalculator";
 import TableResultCalculator from "../../../src/components/TableResultCalculator";
 
-export default function curseReactProjectInvestmentCalculator() {
+export default function CurseReactProjectInvestmentCalculator() {
   const [userInput, setUserInput] = useState({
     initialInvestment: 10000,
     annualInvestment: 1200,
