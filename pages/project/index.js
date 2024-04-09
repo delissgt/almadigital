@@ -1,6 +1,13 @@
 import React from 'react';
 
-import {PROJECT, FASHION_CAT, PUZZLES_PYTHON, CURSE_REACT_ESSENTIALS, CURSE_REACT_TIC_TAC_TOE} from "../../src/library/helpers/Paths";
+import {
+  PROJECT,
+  FASHION_CAT,
+  PUZZLES_PYTHON,
+  CURSE_REACT_ESSENTIALS,
+  CURSE_REACT_TIC_TAC_TOE,
+  CURSE_REACT_PROJECT_INVESTMENT_CALCULATOR
+} from "../../src/library/helpers/Paths";
 
 export default function Project() {
 
@@ -18,6 +25,8 @@ export default function Project() {
         <a href={PROJECT+"/"+CURSE_REACT_ESSENTIALS}>React Essentials</a>
         <br/>
         <a href={PROJECT+"/"+CURSE_REACT_TIC_TAC_TOE}>React Tic Tac Toe</a>
+        <br/>
+        <a href={PROJECT+"/"+CURSE_REACT_PROJECT_INVESTMENT_CALCULATOR}>Investment Calculator</a>
 
 
       <h2>Extra</h2>
