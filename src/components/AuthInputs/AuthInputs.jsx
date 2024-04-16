@@ -108,5 +108,5 @@ export default function AuthInputs() {
         <Button onClick={handleLogin}>Sign In</Button>
       </div>
     </div>
-  );``
+  );
 }
