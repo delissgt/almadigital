@@ -45,6 +45,14 @@ const Button = styled.button`
   }
 `
 
+const TextButton = styled.button`
+  color: #f0b322;
+  border: none;
+  
+  &:hover {
+    color: #f0920e;
+  }
+`
 
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState('');
@@ -92,11 +100,13 @@ export default function AuthInputs() {
         </p>
       </ControlContainer>
       <div className="actions">
-        <button type="button" className="text-button">
+        <TextButton>
+        {/*<button type="button" className="text-button">*/}
           Create a new account
-        </button>
+        {/*</button>*/}
+        </TextButton>
         <Button onClick={handleLogin}>Sign In</Button>
       </div>
     </div>
-  );
+  );``
 }
