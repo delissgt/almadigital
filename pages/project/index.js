@@ -6,7 +6,8 @@ import {
   PUZZLES_PYTHON,
   CURSE_REACT_ESSENTIALS,
   CURSE_REACT_TIC_TAC_TOE,
-  CURSE_REACT_PROJECT_INVESTMENT_CALCULATOR
+  CURSE_REACT_PROJECT_INVESTMENT_CALCULATOR,
+  CURSE_REACT_STYLING_COMPONENTS,
 } from "../../src/library/helpers/Paths";
 
 export default function Project() {
@@ -27,7 +28,8 @@ export default function Project() {
         <a href={PROJECT+"/"+CURSE_REACT_TIC_TAC_TOE}>React Tic Tac Toe</a>
         <br/>
         <a href={PROJECT+"/"+CURSE_REACT_PROJECT_INVESTMENT_CALCULATOR}>Investment Calculator</a>
-
+        <br/>
+        <a href={PROJECT+"/"+CURSE_REACT_STYLING_COMPONENTS} >Styling Components</a>
 
       <h2>Extra</h2>
         <a href={PROJECT+"/"+PUZZLES_PYTHON}>puzzles Python in process</a>
