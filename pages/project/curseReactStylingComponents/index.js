@@ -1,5 +1,5 @@
 
-// import './index.css';
+import './index.css';
 import AuthInputs from "../../../src/components/AuthInputs/AuthInputs";
 import Header from "../../../src/components/HeaderStyle/Header";
 

@@ -14,7 +14,11 @@ module.exports = {
     // "./src/**/*.{html, js}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        title: ['"Pacifico"', 'cursive']
+      }
+    },
   },
   plugins: [],
 }
