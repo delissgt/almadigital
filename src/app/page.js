@@ -1,6 +1,7 @@
 'use client';
 // import Image from 'next/image'
 // import styles from './page.module.css'
+import './globals.css';
 
 // import reactImg from '/public/react-core-concepts.png'
 

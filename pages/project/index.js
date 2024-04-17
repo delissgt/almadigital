@@ -1,4 +1,5 @@
 import React from 'react';
+import 'tailwindcss/tailwind.css';
 
 import {
   PROJECT,
@@ -14,7 +15,7 @@ export default function Project() {
 
   return (
       <>
-      <h1>Projects</h1>
+      <h1 className={'uppercase'}>Projects</h1>
 
       <h2>Test </h2>
         <a href={PROJECT+"/"+FASHION_CAT} >
