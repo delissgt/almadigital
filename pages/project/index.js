@@ -21,6 +21,10 @@ export default function Project() {
         <a href={PROJECT+"/"+FASHION_CAT} >
             Fashion Cat
         </a>
+        <br/>
+        <a href={PROJECT + '/' + "bLifeTestTry"}>
+          b-Life
+        </a>
 
 
       <h2>Learning</h2>
