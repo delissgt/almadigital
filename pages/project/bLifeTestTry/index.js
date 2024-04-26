@@ -90,11 +90,7 @@ export default function BLifeTestTry () {
                     <Card
 
                         cover={<img/>}
-                        actions={[
-                          <Button>b1</Button>,
-                          <Button>b2</Button>,
-                          <Button>b3</Button>,
-                        ]}
+
                     >
                       content card?
                     </Card>
@@ -103,11 +99,7 @@ export default function BLifeTestTry () {
                     <Card
 
                         cover={<img src={product.src} />}
-                        actions={[
-                          <Button>b1</Button>,
-                          <Button>b2</Button>,
-                          <Button>b3</Button>,
-                        ]}
+
                     >
                       content card
                     </Card>
