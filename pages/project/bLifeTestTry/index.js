@@ -77,11 +77,6 @@ export default function BLifeTestTry () {
                   <Col span={5} xs={12} md={6} lg={5} >
                     <Card
                         cover={<p>dasdadasd</p>}
-                        actions={[
-                          <Button>b1</Button>,
-                          <Button>b2</Button>,
-                          <Button>b3</Button>,
-                        ]}
                     >
                       content card
                     </Card>
