@@ -40,17 +40,17 @@ export default function BLifeTestTry () {
                 <Row gutter={24} justify="space-evenly">
                   {/*<Space>*/}
                   <Col span={5} xs={12} md={6} lg={5} >
-                    <Badge offset={[0, 40]} count={<div style={{ backgroundColor: 'white',  borderColor: "lightgray", padding: '5px', borderRadius: '12px', borderWidth: '1px', borderStyle: 'solid' }}><strong><HeartOutlined style={{color: 'lightpink', strokeWidth: '50'}}/> 22</strong></div>}>
-                      <Badge offset={[0, 70]} count={<div style={{ backgroundColor: 'lightpink', borderColor: 'lightgray', padding: '5px', borderRadius: '12px', borderWidth: '1px', borderStyle: 'solid', color: "white" }}>30 %</div>} >
+                    <Badge offset={[0, 40]} count={<div style={{ backgroundColor: 'white',  borderColor: "lightgray", padding: '5px', borderRadius: '15px', borderWidth: '1px', borderStyle: 'solid' }}><HeartOutlined style={{color: 'lightpink', strokeWidth: '50'}}/> 22</div>}>
+                      <Badge offset={[0, 70]} count={<div style={{ backgroundColor: 'lightpink', borderColor: 'lightgray', padding: '5px', borderRadius: '15px', borderWidth: '1px', borderStyle: 'solid', color: "white" }}>30 %</div>} >
                     <Card
                         cover={<img src={product.src} />}
 
                     >
                       <Meta
-                          title={<Row><Col span={8}>Citrate Mag</Col><Col span={8} offset={8}>$273.00</Col></Row>}
+                          title={<Row><Col span={12}>Citrate Mag</Col><Col span={6} offset={6}>$273.00</Col></Row>}
                           description={
                             <div>
-                            <Row><Col span={8}>description</Col><Col span={8} offset={8}>$200.00</Col></Row>
+                            <Row><Col span={12}>240 Cápsulas | 800gr </Col><Col span={6} offset={6}>$200.00</Col></Row>
                             <Row><Col span={16}><Rate allowHalf defaultValue={4.5} style={{ fontSize: '14px' }} /></Col></Row>
                               <br/>
                             <Row align="middle">
