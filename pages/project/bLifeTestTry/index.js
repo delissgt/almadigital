@@ -2,6 +2,8 @@
 import {Flex, Layout, Menu, theme, Card, Button, Row, Col, Rate, Badge} from 'antd';
 import {HeartOutlined, FacebookOutlined, TwitterOutlined, InstagramOutlined} from "@ant-design/icons";
 
+import BadgeBL from "../../../src/components/BadgeBL/BadgeBL";
+
 import blife from "../../../src/assets/blife.png";
 import imageHeader from "../../../src/assets/blife1.png";
 import product from "../../../src/assets/blife-product.png";
@@ -46,8 +48,8 @@ export default function BLifeTestTry () {
                 <Row gutter={24} justify="space-evenly">
                   {/*<Space>*/}
                   <Col span={5} xs={12} md={6} lg={5} >
-                    <Badge offset={[0, 40]} count={<div style={{ backgroundColor: 'white',  borderColor: "lightgray", padding: '5px', borderRadius: '15px', borderWidth: '1px', borderStyle: 'solid' }}><HeartOutlined style={{color: 'lightpink', strokeWidth: '50'}}/> 22</div>}>
-                      <Badge offset={[0, 70]} count={<div style={{ backgroundColor: 'lightpink', borderColor: 'lightgray', padding: '5px', borderRadius: '15px', borderWidth: '1px', borderStyle: 'solid', color: "white" }}>30 %</div>} >
+                    <BadgeBL type="HEART" textCount="22">
+                      <BadgeBL textCount="30 %">
                     <Card
                         cover={<img src={product.src} />}
 
@@ -77,8 +79,8 @@ export default function BLifeTestTry () {
                           }
                       />
                     </Card>
-                    </Badge>
-                    </Badge>
+                    </BadgeBL>
+                    </BadgeBL>
                   </Col>
                   <Col span={5} xs={12} md={6} lg={5} >
                     <Card
