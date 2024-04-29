@@ -22,14 +22,20 @@ export default function BLifeTestTry () {
   return(
       <>
         <Layout >
-          <Header style={{ flex: 1, minWidth: 0}} >
-            <div className="demo-logo"/>
+          <Header style={{ display: 'flex', alignItems: 'center' , backgroundColor: 'white'}} >
+            <Row style={{ width: '100%' }}>
+              <Col span={5}>
+            <div className="demo-logo"><img src={blife.src} width={'200em'} height={'61em'}/></div>
+              </Col>
+              <Col offset={3} span={10} >
             <Menu
                 theme="light"
                 mode="horizontal"
                 items={[{key: 1, label: "Productos"}, {key: 2, label: "Promociones"}, {key: 3, label: "Nosotros"}]}
                 defaultSelectedKeys={['2']}
             />
+              </Col>
+            </Row>
           </Header>
           <Content style={{ backgroundColor: "white" }} >
             <section>
