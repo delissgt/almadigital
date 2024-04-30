@@ -17,7 +17,7 @@ export default function CardBL ({ image,  title, price, description, discount, r
          description={
            <div>
              <Row><Col span={12}>{description}</Col><Col span={6} offset={6}>${discount}</Col></Row>
-             <Row><Col span={16}><Rate allowHalf defaultValue={4.5} style={{ fontSize: '14px' }} /></Col></Row>
+             <Row><Col span={16}><Rate allowHalf defaultValue={rating} style={{ fontSize: '14px' }} /></Col></Row>
              <br/>
              <Row align="middle">
                <Col span={12}>
