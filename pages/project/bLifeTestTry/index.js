@@ -1,15 +1,15 @@
 
-import {Layout, Menu,Card, Row, Col} from 'antd';
+import {Layout, Row, Col} from 'antd';
 
 
 import BadgeBL from "../../../src/components/BadgeBL/BadgeBL";
 import CardBL from "../../../src/components/CardBL/CardBL";
+import HeaderBL from "../../../src/components/HeaderBL";
 
-import blife from "../../../src/assets/blife.png";
 import imageHeader from "../../../src/assets/blife1.png";
 import product from "../../../src/assets/blife-product.png";
 
-const {Header, Footer, Content} = Layout;
+const {Footer, Content} = Layout;
 
 const productsBL = [
   {
@@ -57,21 +57,7 @@ export default function BLifeTestTry () {
   return(
       <>
         <Layout >
-          <Header style={{ display: 'flex', alignItems: 'center' , backgroundColor: 'white'}} >
-            <Row style={{ width: '100%' }}>
-              <Col span={5}>
-            <div className="demo-logo"><img src={blife.src} width={'200em'} height={'61em'}/></div>
-              </Col>
-              <Col offset={3} span={10} >
-            <Menu
-                theme="light"
-                mode="horizontal"
-                items={[{key: 1, label: "Productos"}, {key: 2, label: "Promociones"}, {key: 3, label: "Nosotros"}]}
-                defaultSelectedKeys={['2']}
-            />
-              </Col>
-            </Row>
-          </Header>
+          <HeaderBL/>
           <Content style={{ backgroundColor: "white" }} >
             <section>
               <img src={imageHeader.src} style={{ width: '100%', height: '500px', objectFit: "cover", objectPosition: "top"  }} />
@@ -93,10 +79,9 @@ export default function BLifeTestTry () {
                     ))
                   }
                 </Row>
-
             </section>
           </Content>
-          <Footer>Footeeeer</Footer>
+          <Footer></Footer>
         </Layout>
       </>
   )
