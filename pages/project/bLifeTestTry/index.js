@@ -1,8 +1,9 @@
 
-import {Flex, Layout, Menu, theme, Card, Button, Row, Col, Rate, Badge} from 'antd';
-import {HeartOutlined, FacebookOutlined, TwitterOutlined, InstagramOutlined} from "@ant-design/icons";
+import {Layout, Menu,Card, Row, Col} from 'antd';
+
 
 import BadgeBL from "../../../src/components/BadgeBL/BadgeBL";
+import CardBL from "../../../src/components/CardBL/CardBL";
 
 import blife from "../../../src/assets/blife.png";
 import imageHeader from "../../../src/assets/blife1.png";
@@ -18,8 +19,6 @@ const {Header, Footer, Content} = Layout;
 
 
 export default function BLifeTestTry () {
-
-
 
   return(
       <>
@@ -46,39 +45,16 @@ export default function BLifeTestTry () {
 
             <section style={{ margin: "3rem" }}>
                 <Row gutter={24} justify="space-evenly">
-                  {/*<Space>*/}
                   <Col span={5} xs={12} md={6} lg={5} >
-                    <BadgeBL type="HEART" textCount="22">
+                    <BadgeBL type="HEART" textCount=" 22">
                       <BadgeBL textCount="30 %">
-                    <Card
-                        cover={<img src={product.src} />}
-
-                    >
-                      <Meta
-                          title={<Row><Col span={12}>Citrate Mag</Col><Col span={6} offset={6}>$273.00</Col></Row>}
-                          description={
-                            <div>
-                            <Row><Col span={12}>240 Cápsulas | 800gr </Col><Col span={6} offset={6}>$200.00</Col></Row>
-                            <Row><Col span={16}><Rate allowHalf defaultValue={4.5} style={{ fontSize: '14px' }} /></Col></Row>
-                              <br/>
-                            <Row align="middle">
-                              <Col span={12}>
-                                <Row>COMPARTE</Row>
-                                <Row>
-
-                                  <Button size='small' type='text'><svg color='black' style={{ width: "1em", height: "1em", verticalAlign: "middle", fill: "black", overflow: "hidden" }}  viewBox={"0 0 1024 1024"} ><path d={iconFace}/></svg></Button>
-                                  <Button size="small" type="text" ><TwitterOutlined /></Button>
-                                  <Button size="small" type="text" ><InstagramOutlined /></Button>
-                                </Row>
-                              </Col>
-                              <Col span={8} offset={4}>
-                                <Button size="small" style={{ borderRadius: '11px' }}>Agregar</Button>
-                              </Col>
-                            </Row>
-                          </div>
-                          }
-                      />
-                    </Card>
+                    <CardBL
+                        image={product}
+                        title="Citrate Mag"
+                        price="273.00"
+                        description="240 Cápsulas | 800gr"
+                        discount="200.00"
+                    />
                     </BadgeBL>
                     </BadgeBL>
                   </Col>
