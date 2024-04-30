@@ -1,5 +1,5 @@
 
-import {Button, Card, Col, Rate, Row} from 'antd';
+import {Button, Card, Col, Rate, Row, ConfigProvider} from 'antd';
 import product from "../../assets/blife-product.png";
 import {InstagramOutlined, TwitterOutlined} from "@ant-design/icons";
 
@@ -29,8 +29,21 @@ export default function CardBL ({ image,  title, price, description, discount, r
                    <Button size="small" type="text" ><InstagramOutlined /></Button>
                  </Row>
                </Col>
-               <Col span={8} offset={4}>
-                 <Button size="small" style={{ borderRadius: '11px' }}>Agregar</Button>
+               <Col span={7} offset={4}>
+                 <ConfigProvider
+                     theme={{
+                       token: {
+                         borderRadius: '12px',
+                         contentFontSizeSM: "12px",
+                         paddingBlockSM: "4px 10px",
+                         colorPrimary: "yellow",
+                         // defaultBorderColor: "yellow",
+                         borderColor: "green",
+                       }
+                     }}
+                 >
+                 <Button size="small">Agregar</Button>
+                 </ConfigProvider>
                </Col>
              </Row>
            </div>
