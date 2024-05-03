@@ -8,6 +8,7 @@ import HeaderBL from "../../../src/components/HeaderBL";
 
 import imageHeader from "../../../src/assets/blife1.png";
 import product from "../../../src/assets/blife-product.png";
+import bannerText from "../../../src/assets/blife-banner-horizontal-text.png";
 
 const {Footer, Content} = Layout;
 
@@ -58,9 +59,10 @@ export default function BLifeTestTry () {
       <>
         <Layout >
           <HeaderBL/>
-          <Content style={{ backgroundColor: "white" }} >
-            <section>
+          <Content style={{ backgroundColor: "white" }}  >
+            <section >
               <img src={imageHeader.src} style={{ width: '100%', height: '500px', objectFit: "cover", objectPosition: "top"  }} />
+              <img src={bannerText.src} style={{position: "absolute", left: "60%", objectPosition: "center", height: "450px", top: '13%'}} />
             </section>
 
             <section style={{ margin: "3rem" }}>
