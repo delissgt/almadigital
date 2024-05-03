@@ -67,11 +67,11 @@ export default function BLifeTestTry () {
                 <Row gutter={24} justify="space-evenly">
                   {
                     productsBL.map((productItem, index)=> (
-                        <Col span={5} xs={12} md={6} lg={5} >
+                        <Col span={5} xs={12} md={6} lg={5} key={index}>
                           <BadgeBL type="HEART" textCount=" 22">
                             <BadgeBL textCount="30 %">
                               <CardBL
-                                  key={index}
+                                  // key={index}
                                   {...productItem}
                               />
                             </BadgeBL>
