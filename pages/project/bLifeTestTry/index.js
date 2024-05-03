@@ -66,11 +66,12 @@ export default function BLifeTestTry () {
             <section style={{ margin: "3rem" }}>
                 <Row gutter={24} justify="space-evenly">
                   {
-                    productsBL.map((productItem)=> (
+                    productsBL.map((productItem, index)=> (
                         <Col span={5} xs={12} md={6} lg={5} >
                           <BadgeBL type="HEART" textCount=" 22">
                             <BadgeBL textCount="30 %">
                               <CardBL
+                                  key={index}
                                   {...productItem}
                               />
                             </BadgeBL>
