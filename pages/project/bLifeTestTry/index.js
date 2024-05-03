@@ -71,7 +71,6 @@ export default function BLifeTestTry () {
                           <BadgeBL type="HEART" textCount=" 22">
                             <BadgeBL textCount="30 %">
                               <CardBL
-                                  // key={index}
                                   {...productItem}
                               />
                             </BadgeBL>
